@@ -6,6 +6,7 @@ import Loading from '@/components/Loading'
 import axios from "axios"
 import Link from 'next/link'
 import Image from 'next/image'
+import { Star } from 'lucide-react';
 
 const Movie = () => {
     const params = useParams()
@@ -78,7 +79,11 @@ const Movie = () => {
                         <strong>Description:</strong> {movie.overview}
                     </p>
                     <p className="text-lg mb-4">
-                        <strong>Rating:</strong> ⭐ {movie.vote_average}
+                        <strong>Rating:</strong>{' '}
+                        <span className="inline-flex items-center gap-1">
+                        <Star fill="white" className="w-5 h-5" />
+                        {movie.vote_average}
+                        </span>
                     </p>
 
                     <Link
